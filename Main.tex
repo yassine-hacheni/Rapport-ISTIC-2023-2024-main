@@ -1,0 +1,93 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+
+% Diff?rentes options pour la classe :
+% - taille de la fonte    : 10pt, 11pt, 12pt
+% - recto ou recto-verso    : oneside, twoside
+% - stade de d?veloppement    : draft, final
+
+
+\usepackage[english]{babel}
+%\usepackage[latin1]{inputenc}    % Pour utiliser les lettres accentu?es
+\usepackage{bookmark}
+%\usepackage[utf8]{inputenc}%           gestion des accents (source)
+%\usepackage[T1]{fontenc}%              gestion des accents (PDF)
+%\usepackage[francais,english]{babel}%          gestion du fran?ais
+\usepackage{textcomp}%                 caract?res additionnels
+\usepackage{indentfirst}
+\usepackage[pdftex]{graphicx}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage[french]{varioref}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{amsmath}
+\usepackage{ifpdf} % part of the hyperref bundle
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{makecell}
+
+
+\setlength{\headheight}{15pt} % slightly larger than the minimum required
+%\usepackage{abstract}
+
+
+ % set fonts for nicer pdf view
+ \IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
+ 
+\pagestyle{fancy}
+\fancyhead[L]{\nouppercase\leftmark} %pour afficher le nom du chapitre ? gauche
+\fancyhead[C]{}
+\fancyhead[R]{\nouppercase\rightmark} %pour afficher le nom de la section ? droite
+
+
+\fancyfoot[L]{}
+\fancyfoot[C]{}
+\fancyfoot[R]{\textbf{\thepage}}
+
+% D?but du document
+\begin{document}
+
+\include{./chapters/garde_fin_English}
+\include{./chapters/garde_sign_fin_English}
+\newpage
+\pagenumbering{roman}
+\include{./chapters/Dedicaces_yass}
+\include{./chapters/Dedicaces_ahmed}
+\include{./chapters/Remerciements}
+\include{./chapters/keyTerms}
+
+\tableofcontents
+\listoffigures 
+\listoftables  
+      
+        
+\newpage
+\pagenumbering{arabic}
+\include{./chapters/Introduction}
+\include{./chapters/Chapitre1}
+\include{./chapters/Chapitre2}
+\include{./chapters/Chapitre3}
+\include{./chapters/Chapitre4}
+\include{./chapters/Chapitre5}
+\include{./chapters/Conclusion}
+%
+%\bibliographystyle{alpha}
+%\bibliography{Biblio}
+%\addcontentsline{toc}{chapter}{Bibliographie}% ajouter son entr?e dans la table
+\clearpage
+\addcontentsline{toc}{chapter}{Notegraphy}
+\bibliography{biblio}
+\bibliographystyle{ieeetr}
+\pagestyle{empty}
+\include{./chapters/Annexe1}
+
+
+
+
+% Fin du document
+\end{document}
